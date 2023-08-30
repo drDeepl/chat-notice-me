@@ -1,18 +1,29 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
+import MainLayout from '@/layouts/MainLayout.vue';
+import { NConfigProvider, GlobalThemeOverrides } from 'naive-ui';
+
+const blackColor = '#000000';
+const themeOverrides: GlobalThemeOverrides = {
+  common: {
+    primaryColor: blackColor,
+    iconColor: blackColor,
+    primaryColorHover: null, //'#fa2a55'
+    pressedColor: null,
+    primaryColorSuppl: null,
+    primaryColorPressed: null,
+    borderColor: null,
+    // primaryColorPressed: null,
+    // pressedColor: null,
+    railColor: '#e81cff',
+    borderRadius: '8px'
+  }
+};
 </script>
 
 <template>
-  <header>
+  <n-config-provider :theme-overrides="themeOverrides">
     <div class="wrapper">
-      <nav>
-        <n-space justify="center" align="center">
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/chat">About</RouterLink>
-        </n-space>
-      </nav>
+      <MainLayout></MainLayout>
     </div>
-  </header>
-
-  <RouterView />
+  </n-config-provider>
 </template>

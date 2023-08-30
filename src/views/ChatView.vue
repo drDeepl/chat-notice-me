@@ -29,8 +29,17 @@
 
 <script setup lang="ts">
 import { io } from 'socket.io-client';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { PhPaperPlaneTilt } from '@phosphor-icons/vue';
+import { useLogger } from 'vue-logger-plugin';
+
+// import { logger } from '@/service/utils.service';
+
+const logger = useLogger();
+
+onMounted(() => {
+  logger.warn('');
+});
 
 const socket = io('http://localhost:3000');
 socket.on('connect', function () {

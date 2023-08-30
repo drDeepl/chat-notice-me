@@ -1,4 +1,16 @@
 @import './common/chat.scss';
+@import './common/form.scss';
+@import './common/home.scss';
+@import './common/btn.scss';
+@import './util/vars.scss';
+@import './common/load.scss';
+@import './common/hover.scss';
+@import './common/notification.scss';
+@import './common/message.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /***
     The new CSS reset - version 1.8.5 (last updated 14.6.2023)
